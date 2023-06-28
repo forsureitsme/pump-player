@@ -34,3 +34,4 @@ yarn-error.log*
 
 # Lock files
 *-lock.*
+*.lock
