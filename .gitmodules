@@ -1,0 +1,3 @@
+[submodule "public/songs/stepcharts"]
+	path = public/songs/stepcharts
+	url = git@github.com:forsureitsme/stepcharts.git
