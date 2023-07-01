@@ -4,19 +4,21 @@
   "description": "Personal Pump It Up player",
   "productName": "Pump Player",
   "author": "Pedro Cardoso da Silva <forsureitsme@gmail.com>",
+  "main": "quasar.config.js",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0",
-    "dev": "quasar dev",
+    "dev": "quasar dev -m ssr",
     "build": "quasar build"
   },
   "dependencies": {
     "@piured/engine": "^0.0.6",
     "@quasar/extras": "^1.0.0",
     "axios": "^1.2.1",
-    "pinia": "^2.0.11"
+    "pinia": "^2.0.11",
+    "ssc-parser": "^1.0.2"
   },
   "devDependencies": {
     "@quasar/app-vite": "^1.0.0",
