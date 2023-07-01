@@ -21,17 +21,17 @@ module.exports = configure(async function (ctx) {
     // app boot files (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
-    boot: ['axios', { path: 'channels', client: false }],
+    boot: [
+      'axios',
+      { path: 'version', client: false },
+      { path: 'channels', client: false },
+    ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
     css: ['app.scss'],
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
     build: {
-      env: {
-        COMMITS: (await exec('git rev-list HEAD --count')).stdout.trim(),
-        HASH: (await exec('git rev-parse --short HEAD')).stdout.trim(),
-      },
       target: {
         browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
         node: 'node16',

@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-toolbar-title> Personal Pump Player </q-toolbar-title>
 
-        <div>Version {{ COMMITS }} ({{ HASH }})</div>
+        <div>Version {{ commits }} ({{ hash }})</div>
       </q-toolbar>
     </q-header>
 
@@ -15,5 +15,7 @@
 </template>
 
 <script setup lang="ts">
-const { COMMITS, HASH } = process.env;
+import { useAppStore } from 'src/stores/app';
+
+const { commits, hash } = useAppStore();
 </script>
