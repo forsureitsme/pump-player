@@ -1,6 +1,6 @@
 import { boot } from 'quasar/wrappers';
 import { readFileSync, readdirSync } from 'fs';
-import { parseSSC } from 'ssc-parser';
+import { Parse, parseSSC } from 'ssc-parser';
 import { Channel } from '../models/channel';
 import { Song, getLabelFromMeta } from '../models/song';
 import { useChannelsStore } from 'src/stores/channels';
@@ -52,7 +52,7 @@ export default boot(({ store }) => {
           }
         );
 
-        let ssc;
+        let ssc: Parse | null;
         try {
           ssc = parseSSC(sscFile);
         } catch (e) {
@@ -62,7 +62,7 @@ export default boot(({ store }) => {
         }
 
         channel.songs.push({
-          ...ssc.header,
+          ...ssc,
           label: getLabelFromMeta(ssc.header),
         });
       }

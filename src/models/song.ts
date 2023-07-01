@@ -1,6 +1,6 @@
-import { Meta } from 'ssc-parser';
+import { Meta, Parse } from 'ssc-parser';
 
-export interface Song extends Meta {
+export interface Song extends Parse {
   label: string;
 }
 

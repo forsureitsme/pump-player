@@ -5,6 +5,4 @@ export const useChannelsStore = defineStore('channels', {
   state: () => ({
     channels: Array<Channel>(),
   }),
-  getters: {},
-  actions: {},
 });
